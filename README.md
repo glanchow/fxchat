@@ -1,35 +1,62 @@
 fxchat
 ======
 
-Forex IRC Bot
 A collection of tools for forex discussions over IRC
 
-Phenny (Python IRC bot) modules
-Metatrader (Forex Trading Platform) indicators
+[1. Introduction](#introduction)
+[2. Installation](#installation)
+[2.1 Requirements](#requirements)
+[2.2 Metatrader](#metatrader)
+[2.3 Phenny](#phenny)
 
-[Installation](#installation)
+<a name="introduction"/>
+1. Introduction
+---------------
+
+Never trade alone.
+
+You can see a bot running here [irc://chat.ircforex.com/eurusd](irc://chat.ircforex.com/eurusd).
+
+> [10:59:15] <daydayprofit> .eu bulls h1 14
+> [10:59:16] <cortex> -0.00190668;EURUSD;iBullsPower;60;14
+>
+> [16:15:12] <naiv> .uj
+> [16:15:12] <cortex> 79.494 | 79.504 | Low 79.355 | High 79.673 | UTC 14:15:10
+>
+> [16:43:41] <naiv> .time Chicago
+> [16:43:42] <cortex> it's 09:43 CDT-0500 in Chicago (14:43 UTC)
+>
+> [16:43:53] <naiv> .place New York
+> [16:43:53] <cortex> New York will close in 5h17
 
 <a name="installation"/>
-Installation
-------------
+2. Installation
+---------------
 
-### Metatrader
+<a name="requirements"/>
+### 2.1 Requirements
 
-> The code was written to use with metatrader 4.
->
-> I will update it to metatrader 5 later.
+* Phenny - Python IRC bot
+* Metatrader - Forex Trading Platform
 
-Configure the path to your metatrader directory
+<a name="metatrader"/>
+### 2.2 Metatrader
 
-    MT4=~/.wine/drive_c/Program Files/OANDA - MetaTrader/
+    # Configure the path to your metatrader directory
+    MT4="~/.wine/drive_c/Program Files/OANDA - MetaTrader/"
 
-    cp Dumper.mq4 /$MT4/experts/indicators/
-    cp Fxchat.mq4 /$MT4/experts/indicators/
+    cp Fxchat.mq4 $MT4/experts/scripts/
+    pushd /dev/shm
+    touch fxchat-mt4 mt4-fxchat
+    cd $MT4/files
+    ln -s /dev/shm/fxchat-mt4 fxchat-mt4
+    ln -s /dev/shm/mt4-fxchat mt4-fxchat
+    popd
 
-    cd /$MT4/experts/files/
-    ln -s /dev/shm/EURUSD-Ticks.csv EURUSD-Ticks.csv
-    ln -s /dev/shm/GBPUSD-Ticks.csv GBPUSD-Ticks.csv
-    ln -s /dev/shm/AUDUSD-Ticks.csv AUDUSD-Ticks.csv
-    ln -s /dev/shm/USDCAD-Ticks.csv USDCAD-Ticks.csv
-    ln -s /dev/shm/USDJPY-Ticks.csv USDJPY-Ticks.csv
-    ln -s /dev/shm/USDCHF-Ticks.csv USDCHF-Ticks.csv
+<a name="phenny"/>
+### 2.3 Phenny
+
+    # Configure the path to your phenny directory
+    BOT="~/cortex/phenny/"
+
+    cp fxchat.py $BOT/modules/
