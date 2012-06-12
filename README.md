@@ -5,9 +5,11 @@ A collection of tools for forex discussions over IRC.
 
 1. [Introduction](#introduction)
 2. [Installation](#installation)
+
 2.1. [Requirements](#requirements)
 2.2. [Metatrader](#metatrader)
 2.3. [Phenny](#phenny)
+
 3. [Commands overview](#commands)
 4. [Advanced Configuration](#configuration)
 
