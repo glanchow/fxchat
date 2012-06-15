@@ -45,12 +45,17 @@ The following procedure was realized with GNU/Linux Debian unstable.
 <a name="requirements"/>
 ### 2.1 Requirements
 
-* [Wine development release](#www.winehq.org) - Run Windows applications on Linux
+* [Wine development release](#http://www.winehq.org) - Run Windows applications on Linux
+
   With debian it's easier to use [wine-unstable](#http://dev.carbon-project.org/debian/wine-unstable/)
-* [Metatrader 4](#www.metatrader4.com) - Forex Trading Platform
+
+* [Metatrader 4](#http://www.metatrader4.com) - Forex Trading Platform
+
   If your broker distributes a specific version, you might want to use it.
+
   I don't know if the tools will work under Metatrader 5, please leave me a message if you tried it.
-* [Phenny](#inamidst.com/phenny/) - Python IRC bot
+
+* [Phenny](#http://inamidst.com/phenny/) - Python IRC bot
 
 <a name="zeromq"/>
 ### 2.2 Ømq
@@ -59,7 +64,7 @@ The following procedure was realized with GNU/Linux Debian unstable.
 
     sudo apt-get install libzmq-dev
 
-The python library.
+It's python bindings.
 
     sudo easy_install pyzmq
 
@@ -71,14 +76,16 @@ The python library.
 This is a Ømq library for MT4.
 
 Auto installation.
+
      Get commando.zip here http://codebase.mql4.com/7147
      Run commando.exe
 
 You can also compile it but at the moment I'm writing the code isn't up to date.
+
     Get zmq.zip here http://codebase.mql4.com/7147
     Follow the instructions
 
-#### fxchat.
+#### fxchat
 
 Install the fxchat script for MT4.
 
